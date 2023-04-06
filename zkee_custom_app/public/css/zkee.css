@@ -1,0 +1,8 @@
+/* Start Hide ------------------ */
+.footer-powered{display: none!important;} /* Hide Powered Footer */
+
+
+/* Start Hide List-view Sidebar -------- */
+.no-breadcrumbs[data-route^="List/"] .col-lg-2.layout-side-section {display: none !important;}
+/* End Hide List-view Sidebar -------- */
+

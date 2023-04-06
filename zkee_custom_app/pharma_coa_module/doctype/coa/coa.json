@@ -1,0 +1,279 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:COA-{product_code}-{##}",
+ "creation": "2023-03-22 11:44:25.356246",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "plant_address",
+  "address",
+  "address_line_1",
+  "address_line_2",
+  "city",
+  "county",
+  "state",
+  "column_break_12",
+  "primary_address",
+  "section_break",
+  "product_code",
+  "product_name",
+  "generic_name",
+  "packing",
+  "batch_no",
+  "mfg_date",
+  "mfg_month_and_year",
+  "exp_date",
+  "exp_month_and_year",
+  "coabatch_size",
+  "column_break_1",
+  "mfg_lic_no",
+  "test_as_per",
+  "test_sample",
+  "arno",
+  "trslip_no",
+  "testing_date",
+  "release_quantity",
+  "section_break_2",
+  "coa_parameter_table",
+  "section_break_3",
+  "conclusion",
+  "section_break_4",
+  "signing_authorities"
+ ],
+ "fields": [
+  {
+   "fetch_from": "product_code.item_name",
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Product Name"
+  },
+  {
+   "fetch_from": "product_code.item_name",
+   "fieldname": "generic_name",
+   "fieldtype": "Data",
+   "label": "Generic Name"
+  },
+  {
+   "fieldname": "product_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Product Code",
+   "options": "Item",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "product_code.packing",
+   "fieldname": "packing",
+   "fieldtype": "Link",
+   "label": "Packing",
+   "options": "Packing"
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Batch No",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "mfg_date",
+   "fieldtype": "Date",
+   "label": "Manufacturing Date",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "exp_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "mfg_lic_no",
+   "fieldtype": "Select",
+   "label": "Manufacturing License Number",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fetch_from": "product_code.test_as_per",
+   "fieldname": "test_as_per",
+   "fieldtype": "Data",
+   "label": "Test As Per",
+   "read_only": 1
+  },
+  {
+   "fieldname": "test_sample",
+   "fieldtype": "Data",
+   "label": "Test Sample"
+  },
+  {
+   "fieldname": "arno",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "A.R.No"
+  },
+  {
+   "fieldname": "trslip_no",
+   "fieldtype": "Data",
+   "label": "T.R.Slip No.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "testing_date",
+   "fieldtype": "Date",
+   "label": "Testing Date"
+  },
+  {
+   "fieldname": "conclusion",
+   "fieldtype": "Small Text",
+   "label": "Conclusion"
+  },
+  {
+   "fieldname": "signing_authorities",
+   "fieldtype": "Table",
+   "options": "Signing Authorities"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "plant_address.address",
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Main Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "address.address_line1",
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Address Line 1"
+  },
+  {
+   "fetch_from": "address.address_line2",
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Address Line 2"
+  },
+  {
+   "fetch_from": "address.city",
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "City"
+  },
+  {
+   "fetch_from": "address.country",
+   "fieldname": "county",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "County"
+  },
+  {
+   "fetch_from": "address.state",
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "State"
+  },
+  {
+   "fieldname": "coa_parameter_table",
+   "fieldtype": "Table",
+   "label": "Parameter Test",
+   "options": "COA Parameter Table"
+  },
+  {
+   "fieldname": "mfg_month_and_year",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Mfg Month And Year"
+  },
+  {
+   "fieldname": "exp_month_and_year",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Exp Month And Year"
+  },
+  {
+   "fieldname": "release_quantity",
+   "fieldtype": "Int",
+   "label": "Release Quantity"
+  },
+  {
+   "fieldname": "plant_address",
+   "fieldtype": "Link",
+   "label": "Address",
+   "options": "Plant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "coabatch_size",
+   "fieldtype": "Int",
+   "label": "Batch Size"
+  },
+  {
+   "fieldname": "primary_address",
+   "fieldtype": "Text",
+   "label": "Primary Address",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-06 12:19:41.611321",
+ "modified_by": "Administrator",
+ "module": "Pharma COA Module",
+ "name": "COA",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

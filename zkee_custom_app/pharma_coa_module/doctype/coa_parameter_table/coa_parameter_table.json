@@ -1,0 +1,46 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-03-30 16:36:14.871499",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test",
+  "specification",
+  "result"
+ ],
+ "fields": [
+  {
+   "fieldname": "test",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Test",
+   "read_only": 1
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Result"
+  },
+  {
+   "fieldname": "specification",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Specification",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-03-30 17:15:33.094988",
+ "modified_by": "Administrator",
+ "module": "Pharma COA Module",
+ "name": "COA Parameter Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
