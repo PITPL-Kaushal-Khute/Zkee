@@ -1,0 +1,285 @@
+{
+ "actions": [],
+ "autoname": "format:{product_name}-{packing}",
+ "creation": "2023-03-31 13:17:33.910559",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "product_code",
+  "product_name",
+  "name_of_product",
+  "batch_size",
+  "column_break_lhibc",
+  "packing",
+  "number_of_packets",
+  "type_of_packing",
+  "section_break_12",
+  "cost_sheet_raw_material_table",
+  "section_break_13",
+  "total_quantity",
+  "column_break_01",
+  "total_raw_material_ratepack",
+  "section_break_14",
+  "cost_sheet_packaging_material_table",
+  "total_packaging_material_ratepack",
+  "section_break_1",
+  "raw_material_cost",
+  "converstion_cost",
+  "margin_in_percent",
+  "margin",
+  "process_loss",
+  "process_loss_amount",
+  "column_break_012",
+  "packaging_material_cost",
+  "packing_cost",
+  "total",
+  "price_per_pack",
+  "currency",
+  "doller_value_in_rupees",
+  "price_per_pack_in_doller"
+ ],
+ "fields": [
+  {
+   "fieldname": "name_of_product",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Name of Product",
+   "set_only_once": 1
+  },
+  {
+   "default": "100000",
+   "fieldname": "batch_size",
+   "fieldtype": "Int",
+   "label": "Batch Size",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_lhibc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "product_code.packing",
+   "fieldname": "packing",
+   "fieldtype": "Link",
+   "label": "Packing",
+   "options": "Packing",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "type_of_packing",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type of Packing",
+   "options": "Type of Packing"
+  },
+  {
+   "fieldname": "cost_sheet_raw_material_table",
+   "fieldtype": "Table",
+   "options": "Cost Sheet Raw Material Table"
+  },
+  {
+   "fieldname": "total_quantity",
+   "fieldtype": "Float",
+   "label": "Total Raw Quantity",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cost_sheet_packaging_material_table",
+   "fieldtype": "Table",
+   "options": "Cost Sheet Packaging Material Table"
+  },
+  {
+   "fieldname": "total_raw_material_ratepack",
+   "fieldtype": "Float",
+   "label": "Total Raw Material Rate/Pack",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_packaging_material_ratepack",
+   "fieldtype": "Float",
+   "label": "Total Packaging Material Rate/Pack",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "raw_material_cost",
+   "fieldtype": "Currency",
+   "label": "Raw Material Cost",
+   "options": "Company:company:default_currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "converstion_cost",
+   "fieldtype": "Currency",
+   "label": "Converstion Cost",
+   "options": "Company:company:default_currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "packaging_material_cost",
+   "fieldtype": "Currency",
+   "label": "Packaging Material Cost",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "packing_cost",
+   "fieldtype": "Currency",
+   "label": "Packing Cost",
+   "length": 2,
+   "options": "Company:company:default_currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "margin",
+   "fieldtype": "Currency",
+   "label": "Margin (Amount) ",
+   "options": "Company:company:default_currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "process_loss",
+   "fieldtype": "Percent",
+   "label": "Process Loss (%)",
+   "options": "Percent",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "options": "Company:company:default_currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "price_per_pack",
+   "fieldtype": "Currency",
+   "label": "Price Per Pack",
+   "options": "Company:company:default_currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "price_per_pack_in_doller",
+   "fieldtype": "Currency",
+   "label": "Price Per Pack in (USD)",
+   "options": "currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "process_loss_amount",
+   "fieldtype": "Currency",
+   "label": "Process Loss (Amount) ",
+   "options": "Company:company:default_currency",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "margin_in_percent",
+   "fieldtype": "Percent",
+   "label": "Margin In (%)",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "packing.quantity",
+   "fieldname": "number_of_packets",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Number of Packets",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Raw Material Usage"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_01",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Packaging Material Usage"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_012",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "doller_value_in_rupees",
+   "fieldtype": "Currency",
+   "label": "$ Value In Ruppes",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "USD",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "product_code",
+   "fieldtype": "Link",
+   "label": "Product Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "product_code.item_name",
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "label": "Product Name",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-06 12:32:32.192342",
+ "modified_by": "Administrator",
+ "module": "Cost Sheet",
+ "name": "Cost Sheet",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

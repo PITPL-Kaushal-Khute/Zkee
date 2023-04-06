@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include zkee_custom_app *.css
+recursive-include zkee_custom_app *.csv
+recursive-include zkee_custom_app *.html
+recursive-include zkee_custom_app *.ico
+recursive-include zkee_custom_app *.js
+recursive-include zkee_custom_app *.json
+recursive-include zkee_custom_app *.md
+recursive-include zkee_custom_app *.png
+recursive-include zkee_custom_app *.py
+recursive-include zkee_custom_app *.svg
+recursive-include zkee_custom_app *.txt
+recursive-exclude zkee_custom_app *.pyc

@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "creation": "2023-03-31 17:54:04.291583",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name_of_material",
+  "mou",
+  "quantity",
+  "column_break_xp0rn",
+  "rate",
+  "total",
+  "ratepack"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "name_of_material",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Name of Material",
+   "options": "Packaging Material Master",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "name_of_material.mou",
+   "fieldname": "mou",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mou",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xp0rn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fetch_from": "name_of_material.rate",
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "ratepack",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate/Pack",
+   "precision": "2",
+   "read_only": 1
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-03 17:05:06.608238",
+ "modified_by": "Administrator",
+ "module": "Cost Sheet",
+ "name": "Cost Sheet Packaging Material Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

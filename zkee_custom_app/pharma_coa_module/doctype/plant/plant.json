@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "autoname": "field:plant_name",
+ "creation": "2023-03-31 10:22:42.394878",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "plant_name",
+  "address",
+  "column_break_fhhfw",
+  "primary_address",
+  "address_html",
+  "section_break_sx3mw",
+  "manufacturing_license_number_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_fhhfw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "primary_address",
+   "fieldtype": "Text",
+   "label": "Primary Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "label": "Plant Address",
+   "options": "Address",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "address_html",
+   "fieldtype": "HTML",
+   "label": "Address HTML",
+   "read_only": 1
+  },
+  {
+   "fieldname": "plant_name",
+   "fieldtype": "Data",
+   "label": "Plant Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "manufacturing_license_number_table",
+   "fieldtype": "Table",
+   "label": "Manufacturing License Number Table",
+   "options": "Plant Table"
+  },
+  {
+   "fieldname": "section_break_sx3mw",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-04-03 16:29:22.619074",
+ "modified_by": "Administrator",
+ "module": "Pharma COA Module",
+ "name": "Plant",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
