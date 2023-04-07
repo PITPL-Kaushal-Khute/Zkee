@@ -60,15 +60,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fetch_from": "product_code.packing",
-   "fieldname": "packing",
-   "fieldtype": "Link",
-   "label": "Packing",
-   "options": "Packing",
-   "reqd": 1,
-   "set_only_once": 1
-  },
-  {
    "fieldname": "type_of_packing",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -255,12 +246,18 @@
    "fieldtype": "Data",
    "label": "Product Name",
    "read_only": 1
+  },
+  {
+   "fieldname": "packing",
+   "fieldtype": "Link",
+   "label": "Packing",
+   "options": "Packing"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 12:32:32.192342",
+ "modified": "2023-04-07 15:09:02.209680",
  "modified_by": "Administrator",
  "module": "Cost Sheet",
  "name": "Cost Sheet",

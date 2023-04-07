@@ -6,3 +6,8 @@
 .no-breadcrumbs[data-route^="List/"] .col-lg-2.layout-side-section {display: none !important;}
 /* End Hide List-view Sidebar -------- */
 
+.static-area.ellipsis {text-overflow: inherit;white-space: break-spaces;}
+.form-grid  .grid-overflow-no-ellipsis {height: auto;}
+.form-grid .grid-static-col, .row-index {height: auto;}
+.form-grid textarea.input-with-feedback {height: auto !important;}
+

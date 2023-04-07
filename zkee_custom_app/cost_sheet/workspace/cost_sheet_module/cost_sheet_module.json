@@ -21,9 +21,18 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Packing List",
+   "link_to": "Packing",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-04-03 10:02:24.998253",
+ "modified": "2023-04-07 14:31:54.974682",
  "modified_by": "Administrator",
  "module": "Cost Sheet",
  "name": "Cost Sheet Module",

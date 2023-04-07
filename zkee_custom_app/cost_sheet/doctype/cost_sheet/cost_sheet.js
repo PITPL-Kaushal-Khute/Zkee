@@ -21,9 +21,9 @@ frappe.ui.form.on('Cost Sheet', {
 			}
 		})
 	},
-	//same product packing fetch
-	name_of_product:function(frm) {
-		frappe.db.get_value('Item', { "item_name": frm.doc.name_of_product}, 'packing', (values) => {
+	// same product packing fetch
+	product_code:function(frm) {
+		frappe.db.get_value('Item', { "name": frm.doc.product_code}, 'packing', (values) => {
 			frm.set_value("packing", values.packing);
 			refresh_field('packing')
 		});
@@ -184,11 +184,6 @@ frappe.ui.form.on('Cost Sheet', {
 		frm.set_value("price_per_pack", flt(frm.doc.total)+flt(frm.doc.process_loss_amount));
 		frm.set_df_property('price_per_pack', 'read_only', 1);
 	},
-	get_company_currency: function(frm) {
-		return ("INR");
-	},
-
-
 	price_per_pack:function(frm){
 		frappe.call({
 			async:false,

@@ -47,13 +47,14 @@
    "default": "0",
    "fieldname": "disabled",
    "fieldtype": "Check",
+   "in_standard_filter": 1,
    "label": "Disabled"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 12:27:44.269642",
+ "modified": "2023-04-07 14:33:47.511687",
  "modified_by": "Administrator",
  "module": "Cost Sheet",
  "name": "Packaging Material Master",
