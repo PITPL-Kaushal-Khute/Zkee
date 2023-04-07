@@ -119,7 +119,8 @@
    "fieldname": "arno",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "A.R.No"
+   "label": "A.R.No",
+   "read_only": 1
   },
   {
    "fieldname": "trslip_no",
@@ -156,7 +157,8 @@
   },
   {
    "fieldname": "section_break_4",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Signing Authorities"
   },
   {
    "fetch_from": "plant_address.address",
@@ -235,7 +237,7 @@
   {
    "fieldname": "plant_address",
    "fieldtype": "Link",
-   "label": "Address",
+   "label": "Plant",
    "options": "Plant",
    "reqd": 1
   },
@@ -247,14 +249,14 @@
   {
    "fieldname": "primary_address",
    "fieldtype": "Text",
-   "label": "Primary Address",
+   "label": "Plant Address",
    "read_only": 1
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-06 12:19:41.611321",
+ "modified": "2023-04-07 17:52:55.689853",
  "modified_by": "Administrator",
  "module": "Pharma COA Module",
  "name": "COA",

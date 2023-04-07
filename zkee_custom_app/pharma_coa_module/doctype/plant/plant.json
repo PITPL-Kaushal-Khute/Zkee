@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "field:plant_name",
  "creation": "2023-03-31 10:22:42.394878",
  "doctype": "DocType",
@@ -58,7 +59,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-03 16:29:22.619074",
+ "modified": "2023-04-06 16:33:04.505977",
  "modified_by": "Administrator",
  "module": "Pharma COA Module",
  "name": "Plant",

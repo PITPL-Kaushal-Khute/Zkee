@@ -27,23 +27,10 @@ frappe.ui.form.on('COA',  {
 			}
 		})
 	},
-	product_code:function(frm){
-		//in signing_authorities table in coa_asign set static value
-		let row = frm.add_child('signing_authorities', {
-            coa_asign:"Prepared By",
-        });
-		let row1= frm.add_child('signing_authorities', {
-            coa_asign:"Checked By",
-        });
-		let row2= frm.add_child('signing_authorities', {
-            coa_asign:"Approved By",
-        });
-   		frm.refresh_field('signing_authorities');
-		
-		//in coa_parameter_table automatically add rows
+	get_list:function(frm){
 		var temp=[];
 		if(frm.doc.product_code){
-			frm.clear_table("coa_parameter_table")
+			// cur_frm.clear_table("coa_parameter_table")
 			frappe.call({
 				method: "zkee_custom_app.pharma_coa_module.doctype.coa.coa.get_product_parameter_list",
 				async:false,
@@ -61,6 +48,27 @@ frappe.ui.form.on('COA',  {
 			})
 			frm.refresh_field('coa_parameter_table');	
 		}
+
+	},
+	product_code:function(frm){
+		cur_frm.clear_table("signing_authorities");
+		cur_frm.clear_table("coa_parameter_table");
+
+		//in signing_authorities table in coa_asign set static value
+		let row = frm.add_child('signing_authorities', {
+            coa_asign:"Prepared By",
+        });
+		let row1= frm.add_child('signing_authorities', {
+            coa_asign:"Checked By",
+        });
+		let row2= frm.add_child('signing_authorities', {
+            coa_asign:"Approved By",
+        });
+   		frm.refresh_field('signing_authorities');
+
+		//in coa_parameter_table automatically add rows
+		frm.events.get_list(frm);
+		
 	},
 	before_save:function(frm){
 		//set trslip_no number
@@ -132,12 +140,13 @@ frappe.ui.form.on('COA',  {
 		frm.set_value("conclusion",conclusion)
 	},
 	//Release quantity Should be Equal or Less than Batch Size
-	release_quantity:function(frm){
-		if (frm.doc.coabatch_size < frm.doc.release_quantity ) {
-			frm.set_value("release_quantity", null)
-			msgprint('Release quantity Should be Equal or Less than Batch Size');
+	exp_date:function(frm){
+		if (frm.doc.mfg_date > frm.doc.exp_date ) {
+			frm.set_value("exp_date", null)
+			msgprint('Expiry date should be greater than Manufacturing date');
 		}
-	}
+	},
+
 })
 
 //in Signing Authorities table on name_of_person fetch there designation
@@ -149,4 +158,20 @@ frappe.ui.form.on("Signing Authorities", {
 			refresh_field('Signing Authorities')
 		});
 	},
+});
+
+// release_quantity:function(frm){
+// 	if (frm.doc.coabatch_size < frm.doc.release_quantity ) {
+// 		frm.set_value("release_quantity", null)
+// 		msgprint('Release quantity Should be Equal or Less than Batch Size');
+// 	}
+// },
+frappe.ui.form.on('COA',  'release_quantity',  function(frm) {
+    if (frm.doc.coabatch_size < frm.doc.release_quantity) {
+		frm.events.get_list(frm);
+		frm.set_value("release_quantity", null)
+		frappe.throw(__('You can not select past date in From Date'))
+        // msgprint('You can not select past date in From Date');
+		
+    } 
 });

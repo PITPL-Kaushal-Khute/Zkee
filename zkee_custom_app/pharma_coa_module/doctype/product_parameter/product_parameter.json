@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "field:product_name",
  "creation": "2023-03-23 10:23:44.114215",
@@ -17,7 +18,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Product Code",
-   "options": "Item"
+   "options": "Item",
+   "unique": 1
   },
   {
    "fetch_from": "product_code.item_name",
@@ -35,7 +37,7 @@
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-03-30 10:54:19.836489",
+ "modified": "2023-04-07 17:49:14.693006",
  "modified_by": "Administrator",
  "module": "Pharma COA Module",
  "name": "Product Parameter",
