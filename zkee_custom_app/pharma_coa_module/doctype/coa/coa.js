@@ -9,6 +9,9 @@ frappe.ui.form.on('COA',  {
 		frm.set_df_property('coa_parameter_table', 'cannot_add_rows', true);
     },
 	refresh:function(frm){
+		frm.set_df_property('signing_authorities', 'cannot_add_rows', true);
+		frm.set_df_property('coa_parameter_table', 'cannot_add_rows', true);
+		frm.trigger('setup_testing_date');
 		//from user doctype fetch full_name in Signing Authorities set as option in name_of_person field
 		var arr =[];
 		return frappe.call({
@@ -24,31 +27,9 @@ frappe.ui.form.on('COA',  {
 				})
 				var df = frappe.meta.get_docfield("Signing Authorities","name_of_person", cur_frm.doc.name);
 				df.options = arr;
+				refresh_field('name_of_person')
 			}
 		})
-	},
-	get_list:function(frm){
-		var temp=[];
-		if(frm.doc.product_code){
-			// cur_frm.clear_table("coa_parameter_table")
-			frappe.call({
-				method: "zkee_custom_app.pharma_coa_module.doctype.coa.coa.get_product_parameter_list",
-				async:false,
-				args: {product_name:frm.doc.product_name},
-				callback: function(r) {
-					console.log(r.message);
-					temp = r.message;
-				}
-			})
-			temp.forEach(ppl_list => {
-				let row = frm.add_child("coa_parameter_table", {
-					test: ppl_list.test,
-					specification:ppl_list.specification,
-				});
-			})
-			frm.refresh_field('coa_parameter_table');	
-		}
-
 	},
 	product_code:function(frm){
 		cur_frm.clear_table("signing_authorities");
@@ -67,8 +48,26 @@ frappe.ui.form.on('COA',  {
    		frm.refresh_field('signing_authorities');
 
 		//in coa_parameter_table automatically add rows
-		frm.events.get_list(frm);
-		
+		var temp=[];
+		if(frm.doc.product_code){
+			// cur_frm.clear_table("coa_parameter_table")
+			frappe.call({
+				method: "zkee_custom_app.pharma_coa_module.doctype.coa.coa.get_product_parameter_list",
+				async: false,
+				args: {product_name:frm.doc.product_name},
+				callback: function(r) {
+					console.log(r.message);
+					temp = r.message;
+				}
+			})
+			temp.forEach(ppl_list => {
+				let row = frm.add_child("coa_parameter_table", {
+					test: ppl_list.test,
+					specification:ppl_list.specification,
+				});
+			})
+			frm.refresh_field('coa_parameter_table');	
+		}
 	},
 	before_save:function(frm){
 		//set trslip_no number
@@ -115,6 +114,26 @@ frappe.ui.form.on('COA',  {
 			})
 		}
 	},
+	release_quantity: function(frm){
+		if(frm.doc.release_quantity){
+			if (frm.doc.coabatch_size < frm.doc.release_quantity){
+				frappe.call({
+					method: "zkee_custom_app.pharma_coa_module.doctype.coa.coa.release_quantity",
+					async:false,
+					// args: {release_quantity:frm.doc.release_quantity,
+					// 	batch_size:frm.doc.coabatch_size,
+					// 	doc_name:frm.docname
+					// },
+					callback: function(r) {
+						if(r.message == "True")
+						{
+							frm.set_value("release_quantity", null)
+						}
+					}
+				})
+			}
+		}
+	},
 	//in print format show Manufacturing Date in format -> April,2023
 	mfg_date: function(frm){
 		const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -126,14 +145,9 @@ frappe.ui.form.on('COA',  {
 	},
 
 	//in print format show Expiry Date in format -> April,2023
-	exp_date: function(frm){
-		const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-		const date = new Date(frm.doc.exp_date);
-		let month = months[date.getMonth()];
-		var year = date.getFullYear();
-		const exp_month_and_year = month + "," + year
-		frm.set_value("exp_month_and_year",exp_month_and_year)
-	},
+	// exp_date: function(frm){
+		
+	// },
 	//in test_as_per get in  conclusion field automatically default text set
 	test_as_per:function(frm){
 		const conclusion = "The Above Sample complies as per " + frm.doc.test_as_per + "\nThe Opinion of the undersigned the sample referred to above is of Standard quality as defined in the Act and the Rules made there under for result given above. " 
@@ -141,15 +155,55 @@ frappe.ui.form.on('COA',  {
 	},
 	//Release quantity Should be Equal or Less than Batch Size
 	exp_date:function(frm){
-		if (frm.doc.mfg_date > frm.doc.exp_date ) {
-			frm.set_value("exp_date", null)
-			msgprint('Expiry date should be greater than Manufacturing date');
+		const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+		const date = new Date(frm.doc.exp_date);
+		let month = months[date.getMonth()];
+		var year = date.getFullYear();
+		const exp_month_and_year = month + "," + year
+		frm.set_value("exp_month_and_year",exp_month_and_year)
+		if(frm.doc.exp_date){
+			frappe.call({
+				method: "zkee_custom_app.pharma_coa_module.doctype.coa.coa.exp_date",
+				async:false,
+				args: {exp_date:frm.doc.exp_date,
+					mfg_date:frm.doc.mfg_date,
+				},
+				callback: function(r) {
+					if(r.message == "True")
+					{
+						frm.set_value("exp_date", null)
+					}
+				}
+			})
 		}
 	},
+	setup_testing_date(frm) {
+		let today = new Date();
 
+		// setting datepicker options to set min date & min time
+		
+		frm.get_field('testing_date').$input.datepicker({
+			
+			minDate: today,
+			
+			onSelect: function (fd, d, picker) {
+				if (!d) return;
+				var date = d.toDateString();
+				if (date === today.toDateString()) {
+					// picker.update({
+					// 	minHours: (today.getHours() + 1)
+					// });
+				// } else {
+				// 	picker.update({
+				// 		minHours: 0
+				// 	});
+				}
+				frm.get_field('testing_date').$input.trigger('change');
+			}
+		});
+	}
 })
 
-//in Signing Authorities table on name_of_person fetch there designation
 frappe.ui.form.on("Signing Authorities", {
 	name_of_person:function(frm,cdt,cdn) {
 		var d = locals[cdt][cdn];
@@ -158,20 +212,4 @@ frappe.ui.form.on("Signing Authorities", {
 			refresh_field('Signing Authorities')
 		});
 	},
-});
-
-// release_quantity:function(frm){
-// 	if (frm.doc.coabatch_size < frm.doc.release_quantity ) {
-// 		frm.set_value("release_quantity", null)
-// 		msgprint('Release quantity Should be Equal or Less than Batch Size');
-// 	}
-// },
-frappe.ui.form.on('COA',  'release_quantity',  function(frm) {
-    if (frm.doc.coabatch_size < frm.doc.release_quantity) {
-		frm.events.get_list(frm);
-		frm.set_value("release_quantity", null)
-		frappe.throw(__('You can not select past date in From Date'))
-        // msgprint('You can not select past date in From Date');
-		
-    } 
 });

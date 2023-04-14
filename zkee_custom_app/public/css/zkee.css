@@ -6,8 +6,12 @@
 .no-breadcrumbs[data-route^="List/"] .col-lg-2.layout-side-section {display: none !important;}
 /* End Hide List-view Sidebar -------- */
 
-.static-area.ellipsis {text-overflow: inherit;white-space: break-spaces;}
-.form-grid  .grid-overflow-no-ellipsis {height: auto;}
-.form-grid .grid-static-col, .row-index {height: auto;}
-.form-grid textarea.input-with-feedback {height: auto !important;}
+/* Table CSS ------------------ */
+.frappe-control[data-fieldtype="Table"] .grid-heading-row .grid-row .grid-static-col,
+.frappe-control[data-fieldtype="Table"] .grid-heading-row .grid-row .row-index,
+.frappe-control[data-fieldtype="Table"] .grid-body .grid-row .grid-static-col,
+.frappe-control[data-fieldtype="Table"] .grid-body .grid-row .row-index {height: auto;}
 
+.frappe-control[data-fieldtype="Table"] .grid-heading-row .grid-row .static-area.ellipsis,
+.frappe-control[data-fieldtype="Table"] .grid-body .grid-row .static-area.ellipsis {white-space: normal;}
+/* End Table CSS -------------- */

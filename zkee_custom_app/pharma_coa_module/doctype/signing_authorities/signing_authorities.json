@@ -22,33 +22,38 @@
    "fieldname": "name_of_person",
    "fieldtype": "Select",
    "in_list_view": 1,
-   "label": "Name of Person"
+   "label": "Name of Person",
+   "read_only_depends_on": "eval:!doc.__islocal",
+   "reqd": 1
   },
   {
    "fieldname": "designation",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Designation",
-   "read_only": 1
+   "read_only": 1,
+   "read_only_depends_on": "eval:!doc.__islocal",
+   "reqd": 1
   },
   {
    "fieldname": "date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Date"
+   "label": "Date",
+   "read_only_depends_on": "eval:!doc.__islocal",
+   "reqd": 1
   },
   {
    "fieldname": "signature",
    "fieldtype": "Data",
    "label": "Signature",
-   "print_hide_if_no_value": 0,
    "print_width": "10"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-24 11:52:09.092057",
+ "modified": "2023-04-10 16:04:42.972446",
  "modified_by": "Administrator",
  "module": "Pharma COA Module",
  "name": "Signing Authorities",
