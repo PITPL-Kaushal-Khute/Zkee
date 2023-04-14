@@ -55,3 +55,20 @@ def get_mfg_lic_no_list(plant_address):
 	for person in plant.get("manufacturing_license_number_table"):
 		mfg_lic_no.append(person.manufacturing_license_number)
 	return mfg_lic_no
+
+@frappe.whitelist()
+def release_quantity():
+	value = ""
+	frappe.msgprint(msg='Release quantity Should be Equal or Less than Batch Size',title='Error')
+	value = "True"
+	return value
+
+@frappe.whitelist()
+def exp_date(exp_date,mfg_date):
+	value = ""
+	if  exp_date <  mfg_date :
+		frappe.msgprint(msg='Expiry date should be greater than Manufacturing date',
+    	title='Error')
+		value = "True"
+	return value
+

@@ -34,6 +34,7 @@
   "arno",
   "trslip_no",
   "testing_date",
+  "release_date",
   "release_quantity",
   "section_break_2",
   "coa_parameter_table",
@@ -52,7 +53,7 @@
    "label": "Product Name"
   },
   {
-   "fetch_from": "product_code.item_name",
+   "fetch_from": "product_code.generic_name",
    "fieldname": "generic_name",
    "fieldtype": "Data",
    "label": "Generic Name"
@@ -239,6 +240,7 @@
    "fieldtype": "Link",
    "label": "Plant",
    "options": "Plant",
+   "read_only_depends_on": "eval:!doc.__islocal",
    "reqd": 1
   },
   {
@@ -251,12 +253,17 @@
    "fieldtype": "Text",
    "label": "Plant Address",
    "read_only": 1
+  },
+  {
+   "fieldname": "release_date",
+   "fieldtype": "Date",
+   "label": "Release Date"
   }
  ],
  "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-04-07 17:52:55.689853",
+ "modified": "2023-04-13 16:58:56.482531",
  "modified_by": "Administrator",
  "module": "Pharma COA Module",
  "name": "COA",
