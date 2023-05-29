@@ -1,0 +1,68 @@
+[
+ {
+  "address": "Rajpipla- Zkee International-Plant",
+  "docstatus": 0,
+  "doctype": "Plant",
+  "manufacturing_license_number_table": [
+   {
+    "manufacturing_license_number": "G/25A/5054-A",
+    "parent": "Rajpipla- Zkee International",
+    "parentfield": "manufacturing_license_number_table",
+    "parenttype": "Plant"
+   }
+  ],
+  "modified": "2023-04-17 10:31:08.458326",
+  "name": "Rajpipla- Zkee International",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "plant_name": "Rajpipla- Zkee International",
+  "primary_address": "Plot No. 126-127, G.I.D.C. <br>Phase - II, <br>Rajpipla, Dist. Narmada<br>\nGujarat, State Code: 24<br>India<br>\n"
+ },
+ {
+  "address": "Mehsana- Zkee International-Plant-Plant",
+  "docstatus": 0,
+  "doctype": "Plant",
+  "manufacturing_license_number_table": [
+   {
+    "manufacturing_license_number": "G/25A/5599-A",
+    "parent": "Mehsana- Zkee International-Plant-Plant",
+    "parentfield": "manufacturing_license_number_table",
+    "parenttype": "Plant"
+   },
+   {
+    "manufacturing_license_number": "G/28A/6859-A",
+    "parent": "Mehsana- Zkee International-Plant-Plant",
+    "parentfield": "manufacturing_license_number_table",
+    "parenttype": "Plant"
+   }
+  ],
+  "modified": "2023-05-29 13:48:10.629476",
+  "name": "Mehsana- Zkee International-Plant-Plant",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "plant_name": "Mehsana- Zkee International-Plant-Plant",
+  "primary_address": "Survey No. 889/1, B/H Chadasana ONGC, Chadasana - Jhulasan Road, At &amp; Post - <br>Jhulasan - 382 705, Ta. Kadi, Dist. <br>Mehsana<br>\nGujarat, State Code: 24<br>India<br>\n"
+ },
+ {
+  "address": "Anand- Zkee International-Plant-Plant",
+  "docstatus": 0,
+  "doctype": "Plant",
+  "manufacturing_license_number_table": [
+   {
+    "manufacturing_license_number": "G/28A/6906-A",
+    "parent": "Anand- Zkee International-Plant-Plant",
+    "parentfield": "manufacturing_license_number_table",
+    "parenttype": "Plant"
+   }
+  ],
+  "modified": "2023-05-29 15:02:58.694677",
+  "name": "Anand- Zkee International-Plant-Plant",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "plant_name": "Anand- Zkee International-Plant-Plant",
+  "primary_address": "Survey No. 494- 495, Khambhat - Petlad Road, At &amp; Post -<br> Bamanva - 388 580, Ta. Khambhat, Dist.  <br>Anand<br>\nGujarat, State Code: 24<br>India<br>\n"
+ }
+]

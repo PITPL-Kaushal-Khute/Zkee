@@ -1,0 +1,145 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-25 11:00:48.071574",
+  "name": "Description",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Description"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-25 11:01:15.536359",
+  "name": "Identification by IR",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Identification by IR"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-25 11:01:52.956140",
+  "name": "Identification by (HPLC)",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Identification by (HPLC)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-25 11:02:21.709905",
+  "name": "Average Weight",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Average Weight"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:11:53.455690",
+  "name": "Weight of 20 Tablets",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Weight of 20 Tablets"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:13:15.639044",
+  "name": "Uniformity of Weight",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Uniformity of Weight"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:13:43.208387",
+  "name": "Diameter (in mm)",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Diameter (in mm)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:14:15.564769",
+  "name": "Thickness (in mm)",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Thickness (in mm)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:15:32.951708",
+  "name": "Hardness (in Kg/Cm-2)",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Hardness (in Kg/Cm-2)"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:16:01.660517",
+  "name": "Friability",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Friability"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:16:27.465236",
+  "name": "Disintegration Time",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Disintegration Time"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:16:46.988463",
+  "name": "Dissolution",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Dissolution"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Parameter Test",
+  "modified": "2023-05-29 15:17:21.647803",
+  "name": "Assay Each Film Coated Tablet contains",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "specification": null,
+  "test": "Assay Each Film Coated Tablet contains"
+ }
+]

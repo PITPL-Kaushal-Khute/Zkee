@@ -1,0 +1,99 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Product Parameter",
+  "modified": "2023-05-29 15:17:58.224984",
+  "name": "ACECLODASE TABLETS",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "product_code": "ACEC02",
+  "product_name": "ACECLODASE TABLETS",
+  "product_parameter_table": [
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "Reddish Brown color round shaped\nfilm coated tablet having break line\non one side.",
+    "test": "Description"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": " Should be match with the reference spectra of Losartan Potassium",
+    "test": "Identification by IR"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "358g 3.60g+7.5%",
+    "test": "Weight of 20 Tablets"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "179.00 mg E 80.00 mg + 7.5%\n| (Limit \u2014 175.75 mg to 204.25 mg)",
+    "test": "Average Weight"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": " 180.00 mg + 7.5 %\n| (Limit \u2014 175.75 mg to 204.25 mg",
+    "test": "Uniformity of Weight"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": " 8.00 + 0.10 (in mm)",
+    "test": "Diameter (in mm)"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "3.50 + 0.20 (in mm)",
+    "test": "Thickness (in mm)"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "Not Less than 4.00 Kg/Cm?",
+    "test": "Hardness (in Kg/Cm-2)"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "Not More than 1.00 % w/w",
+    "test": "Friability"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "Not More than 30 minutes",
+    "test": "Disintegration Time"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "Not Less than 70% Q",
+    "test": "Dissolution"
+   },
+   {
+    "parent": "ACECLODASE TABLETS",
+    "parentfield": "product_parameter_table",
+    "parenttype": "Product Parameter",
+    "specification": "Note Less than 95 % and Not more\nthan 105 % of labelled claim",
+    "test": "Assay Each Film Coated Tablet contains"
+   }
+  ]
+ }
+]
